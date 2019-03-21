@@ -1,4 +1,4 @@
-package com.digit;
+package com.example;
 
 public class CustomErrorType {
 

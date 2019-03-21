@@ -1,11 +1,11 @@
-package com.digit;
+package com.example;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-@SpringBootApplication(scanBasePackages={"com.digit"})
+@SpringBootApplication(scanBasePackages={"com.example"})
 public class LokeshApplication extends SpringBootServletInitializer {
 	
 	   @Override

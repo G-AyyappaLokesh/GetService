@@ -1,4 +1,4 @@
-package com.digit.lokesh;
+package com.example.lokesh;
 
 import java.util.List;
 
@@ -9,13 +9,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.digit.*;
-import com.digit.*;
+import com.example.*;
 
 @RestController
 public class mycontroller {
 	@Autowired
-	userservice userService;
+	service Service;
 	
 	public static final Logger logger = LoggerFactory.getLogger(mycontroller.class);
 	
@@ -25,25 +24,25 @@ public class mycontroller {
 		
 		
 		logger.info("fetching by id",id);
-		User user=userService.findById(id);
+		MainUser user=Service.findById(id);
 		if (user == null) {
 			logger.error("User with id {} not found.", id);
-			return new ResponseEntity(new CustomErrorType("User with id " + id 
-					+ " not found"), HttpStatus.NOT_FOUND);
+			return new ResponseEntity(new CustomErrorType("User not available " + id 
+				), HttpStatus.NOT_FOUND);
 		}
-		return new ResponseEntity<User>(user, HttpStatus.OK);
+		return new ResponseEntity<MainUser>(user, HttpStatus.OK);
 		
 		
 		
 	}
 	@GetMapping(value="/user/")
-	public ResponseEntity<List<User>> listAllUsers() {
-		List<User> users = userService.findAllUsers();
+	public ResponseEntity<List<MainUser>> listAllUsers() {
+		List<MainUser> users = Service.findAllUsers();
 		if (users.isEmpty()) {
 			return new ResponseEntity(HttpStatus.NO_CONTENT);
 			// You many decide to return HttpStatus.NOT_FOUND
 		}
-		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
+		return new ResponseEntity<List<MainUser>>(users, HttpStatus.OK);
 	}
 	
 	@GetMapping(value="/welcome")

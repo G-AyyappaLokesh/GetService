@@ -1,13 +1,13 @@
-package com.digit;
+package com.example;
 
-public class User {
+public class MainUser {
 	
-	private long id;
+	private String place;
 	private String name;
 	private double salary;
-	private String place;
+	private long id;
 	
-	public User(long id, String name, double salary, String place){
+	public MainUser(long id, String name, double salary, String place){
 		super();
 		this.id = id;
 		this.name = name;

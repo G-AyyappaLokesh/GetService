@@ -8,7 +8,7 @@
 		<version>2.1.3.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.digit</groupId>
+	<groupId>com.example</groupId>
 	<artifactId>lokesh</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>lokesh</name>
@@ -24,10 +24,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-			<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
+			
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -48,7 +45,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
-		<finalName>GetService</finalName>
+		<finalName>SimpleGetService</finalName>
 	</build>
 
 </project>
