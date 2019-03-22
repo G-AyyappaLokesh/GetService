@@ -1,12 +1,15 @@
 package com.example;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.stereotype.Service;
 
 import com.example.MainUser;
+import com.example.lokesh.*;
+
 
 @Service("MyService")
 public class userimpl implements service {	
@@ -35,6 +38,25 @@ public class userimpl implements service {
 		
 		return null;
 	}
+	public void updateData(MainUser user) {
+		int data = users.indexOf(user);
+		users.set(data, user);
+	}
+
+	
+	
+	public MainUser deleteById(long id)
+	{
+		for (Iterator<MainUser> iterator = users.iterator(); iterator.hasNext(); ) {
+		    MainUser user = iterator.next();
+		    if (user.getId() == id) {
+		        iterator.remove();
+		}
+		}
+		return null;
+		
+		
+	}
 
 	private static List<MainUser> DummyUsers(){
 		List<MainUser> users = new ArrayList<MainUser>();
@@ -44,5 +66,7 @@ public class userimpl implements service {
 		users.add(new MainUser(4,"Rajesh",50000, "Hyd"));
 		return users;
 	}
+
+	
 
 }

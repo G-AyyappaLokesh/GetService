@@ -8,5 +8,7 @@ public interface service {
 	 MainUser findById(long id);
 
 	List<MainUser> findAllUsers();
+    MainUser deleteById(long id);
 
+	 void updateData(MainUser user);
 }
